@@ -1,0 +1,128 @@
+.conteudo {
+    background: linear-gradient(-45deg, #670070, #0e004e, #003268, #003f4e, rgb(0, 124, 93));
+    background-size: 300% 300%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation-name: degrade;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+.conteudo-inicio {
+    width: 100%;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+}
+
+
+.conteudo-inicio p {
+    color: #fff;
+    line-height: 1.6rem;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.conteudo-inicio strong {
+    text-decoration: underline;
+}
+
+
+.conteudo-inicio p span {
+    background-image: linear-gradient(45deg, #ff0000, #b45700, #25b900);
+    background-size: 200% 200%;
+
+    /* corta o fundo para o formato do texto. */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* deixa o texto transparente pro gradiente aparecer */
+    -webkit-text-fill-color: transparent;
+
+    /* isso garante que o texto fique transparente em navegadores mais antigos */
+    color: transparent;
+    animation-name: degrade-texto;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    text-shadow: 
+    0 0 25px #fff;
+    font-weight: bold;
+}
+
+@keyframes degrade-texto {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+.secao-imagem {
+    height: 100vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fundo-lancamento {
+    background-image: url(/img/SpaceX-Foguete-Falcon-9-Lancamento-22112601-1024x683.jpg);
+}
+
+.container-texto {
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+}
+
+.container-texto h1 {
+    margin-bottom: 1rem;
+    font-size: 45px;
+}
+
+
+.container-texto span a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: 0 0 20px #fff;
+}
+
+.container-texto span a:hover {
+    color: blue;
+    text-shadow: 0 0 20px blue;
+    transition: 0.4s ease;
+}
+
+.titulo span {
+    transition: all 0.4s ease;
+    font-size: 6rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 12px;
+    cursor: pointer;
+}
+
+.titulo span:hover {
+    text-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.9),
+    0 0 28px rgba(255, 255, 255, 0.6),
+    0 0 50px rgba(255, 255, 255, 0.3);
+}

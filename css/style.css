@@ -1,0 +1,232 @@
+/* 
+
+ESSE ARQUIVO CSS É O ARQUIVO PRINCIPAL DOS ESTILOS DO SITE, SE APLICANDO A TODAS AS PÁGINAS COMO UMA BASE PARA FICAR MAIS FÁCIL DE SE MANIPULAR!!!
+
+CADA PÁGINA PODE TER UM ARQUIVO CSSS PARA FAZER ALGUMAS ALTERAÇÕES SSOMENTE NAQUELA PÁGINA!!!
+
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.menu-lateral {
+    position: fixed;
+    left: -300px;
+    top: 0;
+    width: 170px;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.1);
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.menu-lateral.ativo {
+    left: 0;
+}
+
+.menu-lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 60px;
+}
+
+.menu-lateral ul li {
+    padding: 15px 30px;
+    width: 170px;
+    transition: 0.3s ease;
+}
+
+.menu-lateral ul li:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu-lateral ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-menu a {
+    position: relative;           /* importante */
+    color: #ffffff;                  /* cor do texto */
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.item-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;                 /* distância da linha em relação ao texto */
+    left: 50%;                    /* começa no centro */
+    width: 0;                     /* começa com largura zero */
+    height: 2px;                  /* espessura da linha */
+    background-color: #ffffff;    /* cor da linha (mude para a cor do seu site) */
+    transition: all 0.4s ease;    /* suavidade da animação */
+    transform: translateX(-50%);  /* centraliza a linha */
+}
+
+.item-menu a:hover::after {
+    width: 100%;
+}
+
+.menu-lateral ul li a i {
+    font-size: 24px;
+}
+
+.botao-menu {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 6;
+    border-radius: 5px;
+    font-size: 24px;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.botao-menu:hover {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.botao-menu.ativo {
+    left: 190px;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 5;
+    transition: all 0.4s ease;
+}
+
+.background.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+@media (max-width: 768px) {
+
+  .menu-lateral {
+    width: 70%;
+    left: -100%;
+  }
+
+  .menu-lateral.ativo {
+    left: 0;
+  }
+
+  .menu-lateral ul li {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .botao-menu {
+    font-size: 20px;
+    padding: 8px 12px;
+  }
+
+}
+
+.conteudo-principal {
+    background: linear-gradient(-45deg, #670070, #0e004e, #003268, #003f4e, rgb(0, 124, 93));
+    background-size: 300% 300%;
+    height: 100dvh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-name: degrade;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes degrade {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.floating-title {
+  font-size: clamp(2rem, 8vw, 6rem); /*  define o tamanho de um elemento com base na largura da janela visível do navegador */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em; /* unidade de medida cuja unidade é o tamanho da fonte do texto */
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.floating-title span {
+  display: inline-block;
+  position: relative;
+  cursor: default;
+  
+  animation: space-float 18s ease-in-out infinite;
+  animation-delay: calc(var(--delay) * 1s);
+  animation-duration: calc(16s + var(--duration) * 1s);
+  
+  transition: text-shadow 0.4s ease;
+}
+
+.floating-title span:hover {
+  text-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.9),
+    0 0 28px rgba(255, 255, 255, 0.6),
+    0 0 50px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes space-float {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  25%  { transform: translate(12px, -35px) scale(1.15) rotate(4deg); }
+  50%  { transform: translate(-10px, -18px) scale(0.90) rotate(-3deg); }
+  75%  { transform: translate(15px, -30px) scale(1.10) rotate(2deg); }
+}
+
+@media (max-width: 768px) {
+  .linha1,
+  .linha2 {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .conteudo-principal h1 {
+    letter-spacing: 5px;
+  }
+
+  .floating-title {
+    font-size: clamp(1.8rem, 10vw, 3rem);
+  }
+
+}
