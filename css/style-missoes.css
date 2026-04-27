@@ -82,7 +82,7 @@
 }
 
 .fundo-espaco-missoes {
-    background-image: url(/img/spacex-starship-voo-orbital.jpg);
+    background-image: url(../img/spacex-starship-voo-orbital.jpg);
 }
 
 .container-texto {
@@ -129,7 +129,7 @@
 }
 
 .fundo-saturno {
-    background-image: url(/img/saturno.jpg);
+    background-image: url(../img/saturno.jpg);
 }
 
 .titulo span {
